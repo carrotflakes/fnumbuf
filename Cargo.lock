@@ -3,12 +3,16 @@
 [[package]]
 name = "fnum"
 version = "0.1.0"
+source = "git+https://github.com/carrotflakes/fnum?branch=main#7b5c5e2266307cd226062be93ba3910c48b592bc"
+dependencies = [
+ "fnum-derive",
+]
 
 [[package]]
 name = "fnum-derive"
 version = "0.1.0"
+source = "git+https://github.com/carrotflakes/fnum?branch=main#7b5c5e2266307cd226062be93ba3910c48b592bc"
 dependencies = [
- "fnum",
  "quote",
  "syn",
 ]
@@ -18,7 +22,6 @@ name = "fnumbuf"
 version = "0.1.0"
 dependencies = [
  "fnum",
- "fnum-derive",
 ]
 
 [[package]]

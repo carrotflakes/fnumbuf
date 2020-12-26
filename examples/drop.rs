@@ -9,7 +9,7 @@ impl Drop for ShowDrop {
     }
 }
 
-#[derive(Debug, fnum_derive::Fnum)]
+#[derive(Debug, fnum::Fnum)]
 enum MyEnum {
     A(ShowDrop),
     B
