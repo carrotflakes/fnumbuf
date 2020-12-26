@@ -64,7 +64,7 @@ impl<T: Fnum> Iterator for FnumBuf<T> {
     }
 }
 
-
+#[derive(Clone)]
 pub struct Iter<'a, T: 'a + Fnum> {
     slice: &'a [u8],
     t: std::marker::PhantomData<T>,
