@@ -1,0 +1,9 @@
+[package]
+name = "fnumbuf"
+version = "0.1.0"
+authors = ["carrotflakes <carrotflakes@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+fnum = { path = "../fnum" }
+fnum-derive = { path = "../fnum/fnum-derive" }
