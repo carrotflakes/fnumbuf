@@ -37,8 +37,7 @@ impl<T: Fnum> std::fmt::Debug for FnumBuf<T> {
 
 impl<T: Fnum> Drop for FnumBuf<T> {
     fn drop(&mut self) {
-        while let Some(_) = self.next() {
-        }
+        self.for_each(drop);
     }
 }
 
@@ -58,7 +57,7 @@ impl<T: Fnum> Iterator for FnumBuf<T> {
             unsafe {
                 std::ptr::copy(e, &mut e_ as *mut T, 1);
             }
-            std::mem::forget(self.vec.drain(..size).collect::<Vec<_>>());
+            self.vec.drain(..size).for_each(drop);
             Some(e_)
         }
     }
