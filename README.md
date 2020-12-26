@@ -1,6 +1,6 @@
 # fnumbuf
 
-Space-efficient buffer for fnum.
+Space-efficient buffer for [fnum](https://github.com/carrotflakes/fnum).
 
 ## Author
 
