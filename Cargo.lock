@@ -2,16 +2,19 @@
 # It is not intended for manual editing.
 [[package]]
 name = "fnum"
-version = "0.1.0"
-source = "git+https://github.com/carrotflakes/fnum?branch=main#7b5c5e2266307cd226062be93ba3910c48b592bc"
+version = "0.0.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "832be7cca9716e60f18512eaf45a26b0636911866c22704114ba6058ab9ecde9"
 dependencies = [
  "fnum-derive",
+ "once_cell",
 ]
 
 [[package]]
 name = "fnum-derive"
-version = "0.1.0"
-source = "git+https://github.com/carrotflakes/fnum?branch=main#7b5c5e2266307cd226062be93ba3910c48b592bc"
+version = "0.0.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ed3840fc54f8a9c27e8bf77e43f216c4245797cbfef41a6f4aee8515737018e3"
 dependencies = [
  "quote",
  "syn",
@@ -23,6 +26,12 @@ version = "0.1.0"
 dependencies = [
  "fnum",
 ]
+
+[[package]]
+name = "once_cell"
+version = "1.5.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "13bd41f508810a131401606d54ac32a467c97172d74ba7662562ebba5ad07fa0"
 
 [[package]]
 name = "proc-macro2"

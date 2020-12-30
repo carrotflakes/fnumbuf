@@ -5,4 +5,4 @@ authors = ["carrotflakes <carrotflakes@gmail.com>"]
 edition = "2018"
 
 [dependencies]
-fnum = { git = "https://github.com/carrotflakes/fnum", branch = "main" }
+fnum = "0.0"

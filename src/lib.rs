@@ -14,7 +14,7 @@ impl<T: Fnum> FnumBuf<T> {
     }
 
     pub fn push(&mut self, e: T) {
-        let size = T::size_of_variant(e.variant_idx());
+        let size = T::size_of_variant(e.variant_index());
         self.vec.extend_from_slice(unsafe {
             std::slice::from_raw_parts(std::mem::transmute::<&T, *const u8>(&e), size)
         });
@@ -50,7 +50,7 @@ impl<T: Fnum> Iterator for FnumBuf<T> {
             None
         } else {
             let e = unsafe { std::mem::transmute::<*const u8, &T>(self.vec.as_ptr()) };
-            let size = T::size_of_variant(e.variant_idx());
+            let size = T::size_of_variant(e.variant_index());
             let mut e_: T = unsafe {
                 std::mem::MaybeUninit::uninit().assume_init()
             };
@@ -77,7 +77,7 @@ impl<'a, T: 'a + Fnum> Iterator for Iter<'a, T> {
             None
         } else {
             let e = unsafe { std::mem::transmute::<*const u8, &'a T>(self.slice.as_ptr()) };
-            let size = T::size_of_variant(e.variant_idx());
+            let size = T::size_of_variant(e.variant_index());
             self.slice = &self.slice[size..];
             Some(e)
         }
